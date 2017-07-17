@@ -16,7 +16,7 @@ sed -i "/ExecStart/s/$/ --mtu=$MTU/g" /etc/systemd/system/docker.service
 service docker restart
 
 # DNS IP address configuration
-echo "nameserver "$DNS_IP_ADDR >> /etc/resolvconf/resolv.conf.d/head
+echo "nameserver "8.8.8.8 >> /etc/resolvconf/resolv.conf.d/head
 resolvconf -u
 
 echo "Downloading Docker Image and Run"
